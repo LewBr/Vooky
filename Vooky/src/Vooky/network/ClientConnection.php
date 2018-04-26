@@ -196,10 +196,6 @@ class ClientConnection
                     return;
                 }
 
-                if(!$packet->canBeBatched()){
-                    throw new \InvalidArgumentException("Received invalid " . get_class($packet) . " inside BatchPacket");
-                }
-
                 $this->sideConnection->player->dataPacket($packet);
                 $this->handlePacket($packet);
 
