@@ -178,6 +178,7 @@ class ClientConnection
             return true;
         }
         $this->processBatch($packet);
+        return true;
     }
 
     /**
